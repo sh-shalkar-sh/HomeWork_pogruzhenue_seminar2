@@ -11,7 +11,7 @@ import math
 a = '8/4'
 b = '9/3'
 
-def sokrFraction(a: int, b: int):                    # метод сокращения дроби
+def sokrFraction(a: int, b: int):             # бүтін санды қысқарту
     if a > b:
         c = a
     else:
@@ -23,7 +23,7 @@ def sokrFraction(a: int, b: int):                    # метод сокраще
             c -= 1
     return str(a) + '/' + str(b)
 
-def sum_fractions(a, b):                        # метод сложения двух дробей
+def sum_fractions(a, b):                        # екі бөлшекті қосу әдісі
     num1 = a.split('/')
     num2 = b.split('/')
     lcm_fraction = math.lcm(int(num1[1]), int(num2[1]))   # НОЗ дроби
@@ -31,12 +31,12 @@ def sum_fractions(a, b):                        # метод сложения д
     numeratorFraction2 = int(lcm_fraction / int(num2[1]) * int(num2[0]))
     return sokrFraction(numeratorFraction1 + numeratorFraction2, lcm_fraction)
 
-def umn_fraction(a,b):                          # метод умножения двух дробей
+def umn_fraction(a,b):                          # екі бөлшекті көбейту әдісі
     num1 = a.split('/')
     num2 = b.split('/')
     return sokrFraction(int(num1[0]) * int(num2[0]), int(num1[1]) * int(num2[1]))
 
-def prov_fraction(a, b, operation):              # метод проверки вычисления дробей на функции Fraction
+def prov_fraction(a, b, operation):              # Fraction функциясында бөлшектерді есептеуді тексеру әдісі
     num1 = a.split('/')
     num2 = b.split('/')
     if operation == '*':
